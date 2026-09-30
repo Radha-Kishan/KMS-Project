@@ -1,0 +1,32 @@
+[
+   {
+      "directory" : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Debug",
+      "command"   : "clang++ -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/main.c"
+   },
+   {
+      "directory" : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Debug",
+      "command"   : "clang++ -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/tm4c1294ncpdt_startup_ccs.c"
+   },
+   {
+      "directory" : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Debug",
+      "command"   : "clang++ -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/uartstdio.c"
+   },
+   {
+      "directory" : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Debug",
+      "command"   : "clang++ -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components/Global_Variables.c"
+   },
+   {
+      "directory" : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Debug",
+      "command"   : "clang++ -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components/gsm_messages.c"
+   },
+   {
+      "directory" : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Debug",
+      "command"   : "clang++ -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components/Useful_Functions.c"
+   }
+]

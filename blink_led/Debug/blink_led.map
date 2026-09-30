@@ -1,0 +1,155 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.7                     
+******************************************************************************
+>> Linked Mon Sep 28 09:54:43 2026
+
+OUTPUT FILE NAME:   <blink_led.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000047d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  000004dc  000ffb24  R  X
+  SRAM                  20000000   00040000  00000200  0003fe00  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000004dc   000004dc    r-x
+  00000000    00000000    00000208   00000208    r-- .intvecs
+  00000208    00000208    000002d4   000002d4    r-x .text
+20000000    20000000    00000200   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000208     
+                  00000000    00000208     tm4c1294ncpdt_startup_ccs.obj (.intvecs)
+
+.text      0    00000208    000002d4     
+                  00000208    0000016c     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00000374    00000070     main.obj (.text)
+                  000003e4    00000038     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReady)
+                  0000041c    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00000450    0000002c                   : gpio.obj (.text:GPIODirModeSet)
+                  0000047c    0000002c     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
+                  000004a8    0000001a     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  000004c2    0000000c     tm4c1294ncpdt_startup_ccs.obj (.text)
+                  000004ce    00000006     driverlib.lib : gpio.obj (.text:GPIOPinWrite)
+                  000004d4    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  000004d8    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.cinit     0    00000000    00000000     UNINITIALIZED
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                          code   ro data   rw data
+       ------                          ----   -------   -------
+    .\
+       tm4c1294ncpdt_startup_ccs.obj   12     520       0      
+       main.obj                        112    0         0      
+    +--+-------------------------------+------+---------+---------+
+       Total:                          124    520       0      
+                                                               
+    C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib
+       gpio.obj                        440    0         0      
+       sysctl.obj                      108    0         0      
+    +--+-------------------------------+------+---------+---------+
+       Total:                          548    0         0      
+                                                               
+    C:\ti\ccs2101\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       boot_cortex_m.c.obj             44     0         0      
+       exit.c.obj                      4      0         0      
+       pre_init.c.obj                  4      0         0      
+    +--+-------------------------------+------+---------+---------+
+       Total:                          52     0         0      
+                                                               
+       Stack:                          0      0         512    
+    +--+-------------------------------+------+---------+---------+
+       Grand Total:                    724    520       512    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                   
+-------   ----                   
+000004d9  C$$EXIT                
+00000451  GPIODirModeSet         
+00000209  GPIOPadConfigSet       
+000004a9  GPIOPinTypeGPIOOutput  
+000004cf  GPIOPinWrite           
+000004c3  ResetISR               
+0000041d  SysCtlPeripheralEnable 
+000003e5  SysCtlPeripheralReady  
+20000200  __STACK_END            
+00000200  __STACK_SIZE           
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+00000000  __TI_static_base__     
+ffffffff  __binit__              
+ffffffff  __c_args__             
+UNDEFED   __mpu_init             
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+0000047d  _c_int00_noinit_noargs 
+000004d5  _system_pre_init       
+000004d9  abort                  
+ffffffff  binit                  
+00000000  g_pfnVectors           
+00000375  main                   
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                   
+-------   ----                   
+00000000  __TI_static_base__     
+00000000  g_pfnVectors           
+00000200  __STACK_SIZE           
+00000209  GPIOPadConfigSet       
+00000375  main                   
+000003e5  SysCtlPeripheralReady  
+0000041d  SysCtlPeripheralEnable 
+00000451  GPIODirModeSet         
+0000047d  _c_int00_noinit_noargs 
+000004a9  GPIOPinTypeGPIOOutput  
+000004c3  ResetISR               
+000004cf  GPIOPinWrite           
+000004d5  _system_pre_init       
+000004d9  C$$EXIT                
+000004d9  abort                  
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+20000200  __STACK_END            
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+ffffffff  __binit__              
+ffffffff  __c_args__             
+ffffffff  binit                  
+UNDEFED   __mpu_init             
+
+[27 symbols]

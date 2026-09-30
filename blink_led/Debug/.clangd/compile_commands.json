@@ -1,0 +1,12 @@
+[
+   {
+      "directory" : "R:/TCAS_Rksharma/TIVA (CCS 21)/blink_led/Debug",
+      "command"   : "clang++ -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/blink_led\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "R:/TCAS_Rksharma/TIVA (CCS 21)/blink_led/main.c"
+   },
+   {
+      "directory" : "R:/TCAS_Rksharma/TIVA (CCS 21)/blink_led/Debug",
+      "command"   : "clang++ -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/blink_led\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "R:/TCAS_Rksharma/TIVA (CCS 21)/blink_led/tm4c1294ncpdt_startup_ccs.c"
+   }
+]
