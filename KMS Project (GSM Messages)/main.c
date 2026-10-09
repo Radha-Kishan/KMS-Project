@@ -28,7 +28,7 @@ tCANMsgObject rxStartCmd;
 char current_buffer[256];
 
 uint32_t wait_ticks = 0;
-char MQTT_RX_TEXT[200];
+char MQTT_RX_TEXT[200];         // hello
 
 // 4TH BYTE OF GSM_START_REQ DECIDES 1- START 2-STOP
 // FIRST 3 BYTES OF CPU_TIME_SYS GIVES THE CPU TIME
