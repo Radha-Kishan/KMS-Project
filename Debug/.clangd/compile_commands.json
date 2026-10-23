@@ -1,0 +1,42 @@
+[
+   {
+      "directory" : "C:/Users/HP/workspace_ccstheia/KMS-Project/Debug",
+      "command"   : "clang++ -I\"C:/Users/HP/workspace_ccstheia/KMS-Project\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "C:/Users/HP/workspace_ccstheia/KMS-Project/Components/Global_Variables.c"
+   },
+   {
+      "directory" : "C:/Users/HP/workspace_ccstheia/KMS-Project/Debug",
+      "command"   : "clang++ -I\"C:/Users/HP/workspace_ccstheia/KMS-Project\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "C:/Users/HP/workspace_ccstheia/KMS-Project/Components/Useful_Functions.c"
+   },
+   {
+      "directory" : "C:/Users/HP/workspace_ccstheia/KMS-Project/Debug",
+      "command"   : "clang++ -I\"C:/Users/HP/workspace_ccstheia/KMS-Project\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "C:/Users/HP/workspace_ccstheia/KMS-Project/Components/gsm_messages.c"
+   },
+   {
+      "directory" : "C:/Users/HP/workspace_ccstheia/KMS-Project/Debug",
+      "command"   : "clang++ -I\"C:/Users/HP/workspace_ccstheia/KMS-Project\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "C:/Users/HP/workspace_ccstheia/KMS-Project/Components/kms_can.c"
+   },
+   {
+      "directory" : "C:/Users/HP/workspace_ccstheia/KMS-Project/Debug",
+      "command"   : "clang++ -I\"C:/Users/HP/workspace_ccstheia/KMS-Project\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "C:/Users/HP/workspace_ccstheia/KMS-Project/Components/kms_keys.c"
+   },
+   {
+      "directory" : "C:/Users/HP/workspace_ccstheia/KMS-Project/Debug",
+      "command"   : "clang++ -I\"C:/Users/HP/workspace_ccstheia/KMS-Project\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "C:/Users/HP/workspace_ccstheia/KMS-Project/main.c"
+   },
+   {
+      "directory" : "C:/Users/HP/workspace_ccstheia/KMS-Project/Debug",
+      "command"   : "clang++ -I\"C:/Users/HP/workspace_ccstheia/KMS-Project\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "C:/Users/HP/workspace_ccstheia/KMS-Project/tm4c1294ncpdt_startup_ccs.c"
+   },
+   {
+      "directory" : "C:/Users/HP/workspace_ccstheia/KMS-Project/Debug",
+      "command"   : "clang++ -I\"C:/Users/HP/workspace_ccstheia/KMS-Project\" -I\"C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include\" -I\"C:/ti/TivaWare_C_Series-2.2.0.295\" -I\"R:/TCAS_Rksharma/TIVA (CCS 21)/KMS Project (GSM Messages)/Components\" -Dccs=\"ccs\" -DPART_TM4C1294NCPDT -xc",
+      "file"      : "C:/Users/HP/workspace_ccstheia/KMS-Project/uartstdio.c"
+   }
+]

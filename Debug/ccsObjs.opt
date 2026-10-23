@@ -1,0 +1,11 @@
+"./main.obj"
+"./tm4c1294ncpdt_startup_ccs.obj"
+"./uartstdio.obj"
+"./Components/Global_Variables.obj"
+"./Components/Useful_Functions.obj"
+"./Components/gsm_messages.obj"
+"./Components/kms_can.obj"
+"./Components/kms_keys.obj"
+"../tm4c1294ncpdt.cmd"
+-llibc.a
+-l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"
