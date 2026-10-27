@@ -21,6 +21,13 @@
 #define KMS_STARTUP_ACK_CAN_ID      0x08AU
 #define KMS_HEARTBEAT_ACK_CAN_ID    0x0C7U
 #define KMS_KEYS_TX_CAN_ID          0x134U      // received by kms_rx_handle() on the Hercules
+#define KMS_START_ACK_CAN_ID        0x138U      // ACK for 0x130 - needs an RX mailbox + handler on the Hercules
+
+// Start request ACK (universal ACK layout, as send_cpu_universal_ack() on the Hercules)
+// Byte 0-1 : CAN ID being acknowledged (MSB first), byte 2 : command (byte 0 of the 0x130 frame)
+// Byte 3   : status, bytes 4-7 : 0
+#define KMS_START_ACK_OK            0x00U
+#define KMS_START_ACK_INVALID       0x01U       // unknown command byte
 
 // Message types (can_if.h / kms.c on the Hercules)
 #define MSG_TYPE_CPU_STARTUP        0x01U

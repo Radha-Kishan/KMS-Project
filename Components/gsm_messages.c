@@ -188,7 +188,7 @@ static void kms_handle_auth_keys(const uint8_t *msg, uint16_t len)
         memcpy(&rx_sets[i], &msg[20U + (uint16_t)i * KMS_KEY_SET_BYTES], KMS_KEY_SET_BYTES);
     }
 
-    kms_rx.keys_store_failed = !kms_keys_save(&msg[15], rx_sets, count);
+    kms_keys_save(&msg[15], rx_sets, count);
     kms_rx.keys_received = true;
 }
 
