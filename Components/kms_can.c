@@ -28,6 +28,7 @@
 #define OBJ_STARTUP_ACK_TX      6U
 #define OBJ_HEARTBEAT_ACK_TX    7U
 #define OBJ_KEYS_TX             8U
+#define OBJ_START_ACK_TX        9U
 
 static uint32_t g_firmware_checksum;
 
@@ -121,6 +122,34 @@ static void handle_heartbeat(const uint8_t *data)
     can_load_tx(OBJ_HEARTBEAT_ACK_TX, KMS_HEARTBEAT_ACK_CAN_ID, ack);
 }
 
+// ACK for every 0x130 frame. rx_id is the received ID (0x130 + CPU offset),
+// so the Hercules can see which of its frames was acknowledged.
+static void handle_start_request(uint32_t rx_id, const uint8_t *data)
+{
+    static uint8_t ack[8];
+    uint8_t cmd = data[0];
+
+    kms_last_start_cmd = cmd;
+
+    memset(ack, 0, sizeof(ack));
+    ack[0] = (uint8_t)(rx_id >> 8);
+    ack[1] = (uint8_t)(rx_id & 0xFFU); 
+    ack[2] = cmd;
+
+    // 0x01 query / 0x02 identification / 0x03 key request (kms.c on the Hercules)
+    if ((cmd >= 0x01U) && (cmd <= 0x03U))
+    {
+        ack[3] = KMS_START_ACK_OK;
+        start_requested = true;
+    }
+    else
+    {
+        ack[3] = KMS_START_ACK_INVALID;
+    }
+
+    can_load_tx(OBJ_START_ACK_TX, KMS_START_ACK_CAN_ID, ack);
+}
+
 // ============================================================
 // CAN0 INTERRUPT
 // ============================================================
@@ -158,10 +187,8 @@ void CAN0IntHandler(void)
             break;
 
         case OBJ_KMS_START_RX:
-            // Any command on 0x130 (0x01 query / 0x02 identification /
-            // 0x03 key request from kms.c) starts the whole KMS process here
-            kms_last_start_cmd = data[0];
-            start_requested = true;
+            // A valid command on 0x130 starts the whole KMS process; every frame is ACKed
+            handle_start_request(rxMsg.ui32MsgID, data);
             break;
 
         case OBJ_CPU_TIME_RX:

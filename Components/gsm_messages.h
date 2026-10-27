@@ -15,8 +15,7 @@ typedef struct
     bool    id_ack_received;        // 0x91
     uint8_t id_ack_status;          // KMS_ACK_OTP_SENT / ..._ID_NOT_REGISTERED / ..._DELIVERY_FAILED
 
-    bool    keys_received;          // 0x93, already stored in EEPROM
-    bool    keys_store_failed;
+    bool    keys_received;          // 0x93, already stored in RAM (kms_keys.c)
 
     bool    status_received;        // 0x95
     uint8_t status_unique_id[4];    // Key Set Unique ID currently in the KMS

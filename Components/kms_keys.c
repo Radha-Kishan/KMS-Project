@@ -1,9 +1,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
-#include "inc/hw_memmap.h"
-#include "driverlib/sysctl.h"
-#include "driverlib/eeprom.h"
 
 #include "main.h"
 #include "Components/kms_keys.h"
@@ -11,15 +8,10 @@
 #include "Components/Useful_Functions.h"
 
 // ============================================================
-// KEY STORE IN EEPROM (SRS 4.7.7.9: keys in non-volatile memory)
-// 4 + 4 + 4 + 30 * 40 = 1212 bytes, a multiple of 4 as EEPROMProgram needs
+// KEY STORE IN RAM (lost on reset - the KMS process gets new keys)
 // ============================================================
-#define KMS_STORE_MAGIC     0x4B4D5331UL        // "KMS1"
-#define KMS_STORE_ADDR      0x0000U
-
 typedef struct
 {
-    uint32_t magic;
     uint8_t  unique_id[4];                      // Key Set Unique ID from the KMS
     uint32_t count;                             // number of valid sets
     kms_key_set_t sets[KMS_MAX_KEY_SETS];
@@ -29,25 +21,10 @@ static kms_key_store_t store;
 
 void kms_keys_init(void)
 {
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_EEPROM0);
-    while (!SysCtlPeripheralReady(SYSCTL_PERIPH_EEPROM0));
-
     memset(&store, 0, sizeof(store));
-
-    if (EEPROMInit() != EEPROM_INIT_OK)
-    {
-        return;                                 // treated as "no keys stored"
-    }
-
-    EEPROMRead((uint32_t *)&store, KMS_STORE_ADDR, sizeof(store));
-
-    if ((store.magic != KMS_STORE_MAGIC) || (store.count > KMS_MAX_KEY_SETS))
-    {
-        memset(&store, 0, sizeof(store));       // blank or corrupt EEPROM
-    }
 }
 
-bool kms_keys_save(const uint8_t unique_id[4], const kms_key_set_t *sets, uint8_t count)
+void kms_keys_save(const uint8_t unique_id[4], const kms_key_set_t *sets, uint8_t count)
 {
     if (count > KMS_MAX_KEY_SETS)
     {
@@ -55,12 +32,9 @@ bool kms_keys_save(const uint8_t unique_id[4], const kms_key_set_t *sets, uint8_
     }
 
     memset(&store, 0, sizeof(store));
-    store.magic = KMS_STORE_MAGIC;
     memcpy(store.unique_id, unique_id, 4U);
     store.count = count;
     memcpy(store.sets, sets, (uint32_t)count * sizeof(kms_key_set_t));
-
-    return (EEPROMProgram((uint32_t *)&store, KMS_STORE_ADDR, sizeof(store)) == 0U);
 }
 
 uint8_t kms_keys_count(void)
@@ -113,7 +87,7 @@ int kms_keys_current_index(void)
 
     if (!kms_time_now(&now))
     {
-        return -1;
+        return (store.count > 0U) ? 0 : -1;     // TEST: no GPS time -> use set 0      ACTUAL: return -1;
     }
 
     now_bytes[0] = now.hour;
@@ -131,7 +105,7 @@ int kms_keys_current_index(void)
         }
     }
 
-    return -1;
+    return (store.count > 0U) ? 0 : -1;         // TEST: no set valid now -> use set 0  ACTUAL: return -1;
 }
 
 bool kms_keys_available(void)

@@ -446,7 +446,8 @@ static void kms_update_hercules_keys(void)
 void kms_task(void)
 {
     // ---------- start from the Hercules ----------
-    if (1)   // kms_can_start_requested()
+
+    if (kms_can_start_requested())    
     {
         kms_active = true;
         kms_sent_set_index = -2;            // (re)send the current set to the Hercules
@@ -1039,7 +1040,7 @@ int main(void)
 
     calculated_firmware_checksum = calculate_firmware_crc();
 
-    // Keys stored in EEPROM by an earlier run
+    // Key store in RAM, empty until the KMS sends keys
     kms_keys_init();
 
     // CAN first, so startup / heartbeat are answered while the modem powers up

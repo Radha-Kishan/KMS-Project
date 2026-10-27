@@ -27,7 +27,7 @@ typedef struct
 
 void kms_keys_init(void);
 
-bool kms_keys_save(const uint8_t unique_id[4], const kms_key_set_t *sets, uint8_t count);
+void kms_keys_save(const uint8_t unique_id[4], const kms_key_set_t *sets, uint8_t count);
 
 uint8_t kms_keys_count(void);
 const uint8_t *kms_keys_unique_id(void);
